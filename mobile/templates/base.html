@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+     body {
+        font-family:'cairo';font-size: 22px;
+        }
+
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #aec4d6;
+            color: black;
+            text-align:center;
+
+        }
+
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .article{
+            max-width: 900px ;
+            margin: 200px auto ;
+            padding: 0.15px ;
+        }
+
+        .article h2{
+            margin-top: 0;
+            color: #333;
+        }
+
+        .article p{
+            color: #555;
+        }
+
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar text-white" style="background-color: rgb(138, 164, 225);">
+            <div class="container">
+                <p>درس جانقو</p>
+                <div>
+                    <h1>معسكر طويق</h1>
+                </div>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success position-relative rounded">
+                        <i class="bi bi-basket"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ cart_total }}</span>
+                        </button>
+                    </li>
+                    <li class="list-inline-item"><a href="{%  url 'landpage' %}" >الرئيسية</li>
+                    <li class="list-inline-item"><a href="{%   url 'aboutus'  %}">حولنا</a></li> 
+                    <li class="list-inline-item"><a href="{%   url 'blog'  %}">المقالات</a></li> 
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+        
+    </main>
+
+
+
+    <footer>
+        <p> copy right 2025</p>
+
+    </footer>
+</body>
+</html>

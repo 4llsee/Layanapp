@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+  <div class="card-body mx-4">
+    <div class="container">
+        <div class="text-center my-4">
+            <i class="bi bi-bag-check-fill text-success" style="font-size:40px; margin-bottom:10px;"></i>
+            <h2 class="mt-2">شكراً لشرائكم من متجري</h2>
+        </div>
+        
+      <div class="row">
+        <ul class="list-unstyled">
+          <li class="text-black">{{full_name}}</li>
+          <li class="text-muted mt-1"><span class="text-black">Invoice</span> #12345</li>
+          <li class="text-black mt-1">September 10 2025</li>
+        </ul>
+        <hr>
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>رقم المنتج</th>
+                    <th>اسم المنتج</th>
+                    <th>سعر المنتج</th>
+                    <th>صورة المنتج</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in product %}
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>
+                        <img src="{{item.image}}" height="60" width="60">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                   
+{% endblock %}

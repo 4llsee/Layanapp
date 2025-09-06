@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+  <div class="card-body mx-4">
+    <div class="container">
+        <div class="text-center my-4">
+            <i class="bi bi-bag-check-fill text-success" style="font-size:40px; margin-bottom:10px;"></i>
+            
+            <h1 class="mt-2">شكراً لشرائكم من متجري</h1>
+             <h2 class="mt-2">سيتم التواصل معكم قريبا...</h2>
+        </div>
+        
+      <div class="row">
+        <ul class="list-unstyled">
+          <li class="text-black">{{full_name}}</li>
+          <li class="text-muted mt-1"><span class="text-black">Invoice</span> #12345</li>
+          <li class="text-black mt-1">September 10 2025</li>
+        </ul>
+        <hr>    
+{% endblock %}

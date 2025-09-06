@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <div class="container">
+     <div class="row d-flex justify-content-center mt-5">
+        <div class="col-md-4">
+              <div class="card">
+                <div class="card-header " style="background-color: rgb(78, 86, 156);">
+                <h3 class="text-center text-white" >تسجيل دخول جديد</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3 text-end">
+                            <label class="form-label ">اسم المستخدم</label>
+                            <input type="text" class="form-control" name="username">
+                        </div>
+                        <div class="mb-3 text-end">
+                            <label class="form-label ">البريد الالكتروني </label>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                        <div class="mb-3 text-end">
+                            <label class="form-label "> كلمة السر </label>
+                            <input type="password" class="form-control" name="password1">
+                        </div>
+                        <div class="mb-3 text-end">
+                            <label class="form-label "> تأكيد كلمة المرور</label>
+                            <input type="password" class="form-control" name="password2">
+                        </div>
+                         <div class="row">
+                            <div class="col text-center">
+                            <button type="submit" class="btn btn-primary">تسجيل جديد</button>
+                            </div>
+                        </div>
+                    </form>
+                        
+                </div>
+              
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
